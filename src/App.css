@@ -16,13 +16,37 @@
 
 
 /*  */
+.section-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.section-btn:nth-child(2){
+    margin: 0 8rem;
+}
+
 .section-btn{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
     border: none;
     background-color: transparent;
-    padding: 2.5rem 4.75rem;
+    width: 9rem;
+    padding: 1.4rem;
+    display: flex;
+    justify-content: center;
+
 }
 
 .active {
-    border-bottom: 5px solid #2F80ED;
+    border-bottom: 4px solid #2F80ED;
     border-radius: 4px 4px 0px 0px;
+}
+
+.container-separator{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    height: 1px;
+    width: 100%;
+    position: relative;
+    top: -1px;
 }
