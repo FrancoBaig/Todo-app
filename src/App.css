@@ -13,3 +13,16 @@
     letter-spacing: -1.2px;
     padding: 4rem 0;
 }
+
+
+/*  */
+.section-btn{
+    border: none;
+    background-color: transparent;
+    padding: 2.5rem 4.75rem;
+}
+
+.active {
+    border-bottom: 5px solid #2F80ED;
+    border-radius: 4px 4px 0px 0px;
+}
