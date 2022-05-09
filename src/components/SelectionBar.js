@@ -9,7 +9,7 @@ function SelectionBar() {
                 <Selection name={"Active"} />
                 <Selection name={"Completed"} />
             </div>
-            <div class="container-separator"></div>
+            <div className="container-separator"></div>
         </>
     );
 }

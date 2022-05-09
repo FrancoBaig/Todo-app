@@ -1,12 +1,12 @@
 import React from "react";
 
-function Task() {
+function Task({ todo }) {
     return (
         <>
             <div className="task">
                 <input type="checkbox" name="task-check" className="checkbox" />
-                <label for="task-check" className="task-label">
-                    Tarea 1
+                <label htmlFor="task-check" className="task-label">
+                    {todo.name}
                 </label>
                 <button className="trash-btn">
                     <i className="fas fa-trash"></i>

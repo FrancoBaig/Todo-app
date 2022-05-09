@@ -1,10 +1,12 @@
 import React from "react";
 import Task from "./Task";
 
-function TaskList() {
+function TaskList({ todoList, setTodoList }) {
     return (
         <div className="task-list">
-            <Task />
+            {todoList.map((todo) => (
+                <Task key={todo.id} todo={todo} />
+            ))}
         </div>
     );
 }
