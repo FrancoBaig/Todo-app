@@ -82,3 +82,35 @@
 .input-btn:hover{
     background-color: #146fe9;
 }
+
+/* Task List */
+
+.task{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.checkbox {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid #828282;
+}
+
+.task-label{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin-left: 1rem;
+}
+
+.trash-btn{
+    margin-left: auto;
+    color: #BDBDBD;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
