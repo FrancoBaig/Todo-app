@@ -1,17 +1,47 @@
 import React from "react";
 
-function Task({ todo, todoList, setTodoList }) {
+function Task({ todo, todoList, setTodoList, status }) {
     const deleteHandler = () => {
         setTodoList(todoList.filter((item) => item.id !== todo.id));
+    };
+
+    const completeHandler = () => {
+        setTodoList(
+            todoList.map((elem) => {
+                if (elem.id === todo.id) {
+                    return {
+                        ...todo,
+                        completed: !todo.completed,
+                    };
+                }
+                return elem;
+            })
+        );
     };
     return (
         <>
             <div className="task">
-                <input type="checkbox" name="task-check" className="checkbox" />
-                <label htmlFor="task-check" className="task-label">
+                <input
+                    type="checkbox"
+                    name="task-check"
+                    className="checkbox"
+                    checked={todo.completed}
+                    onChange={completeHandler}
+                />
+                <label
+                    htmlFor="task-check"
+                    className={`task-label ${
+                        todo.completed ? "completed" : ""
+                    }`}
+                >
                     {todo.name}
                 </label>
-                <button className="trash-btn" onClick={deleteHandler}>
+                <button
+                    className={`trash-btn ${
+                        status === "Completed" ? "visible" : ""
+                    }`}
+                    onClick={deleteHandler}
+                >
                     <i className="fas fa-trash"></i>
                 </button>
             </div>

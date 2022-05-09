@@ -1,13 +1,20 @@
 import React from "react";
 import Selection from "./Selection";
 
-function SelectionBar() {
+const selectionArray = ["All", "Active", "Completed"];
+
+function SelectionBar({ status, setStatus }) {
     return (
         <>
             <div className="section-container">
-                <Selection name={"All"} />
-                <Selection name={"Active"} />
-                <Selection name={"Completed"} />
+                {selectionArray.map((section) => (
+                    <Selection
+                        key={section}
+                        name={section}
+                        status={status}
+                        setStatus={setStatus}
+                    />
+                ))}
             </div>
             <div className="container-separator"></div>
         </>
