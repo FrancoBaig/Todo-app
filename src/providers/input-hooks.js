@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
-export const InputContext = createContext();
+const InputContext = createContext();
 
 function InputProvider({ children }) {
     const [input, setInput] = useState("");

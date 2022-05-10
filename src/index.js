@@ -6,12 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 
 import TodoProvider from "./providers/todo-hooks";
 import StatusProvider from "./providers/status-hooks";
+import FilteredTodoProvider from "./providers/filtered-hooks";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <StatusProvider>
         <TodoProvider>
-            <App />
+            <FilteredTodoProvider>
+                <App />
+            </FilteredTodoProvider>
         </TodoProvider>
     </StatusProvider>
 );

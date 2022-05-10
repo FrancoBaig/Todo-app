@@ -4,11 +4,12 @@ import SelectionBar from "./components/SelectionBar";
 import TaskBoard from "./components/TaskBoard";
 import { useTodo } from "./providers/todo-hooks";
 import { useStatus } from "./providers/status-hooks";
+import { useFilteredTodo } from "./providers/filtered-hooks";
 
 function App() {
     const [todoList, setTodoList] = useTodo();
     const [status] = useStatus();
-    const [filteredList, setFilteredList] = useState(todoList);
+    const [filteredList, filterList] = useFilteredTodo();
 
     useLayoutEffect(() => {
         if (localStorage.getItem("todoList") === null) {
@@ -22,24 +23,10 @@ function App() {
     useLayoutEffect(() => {
         saveLocalTodoList();
         filterList();
-        console.log("activo");
     }, [status, todoList]);
 
     const saveLocalTodoList = () => {
         localStorage.setItem("todoList", JSON.stringify(todoList));
-    };
-
-    const filterList = () => {
-        switch (status) {
-            case "Completed":
-                setFilteredList(todoList.filter((todo) => todo.completed));
-                break;
-            case "Active":
-                setFilteredList(todoList.filter((todo) => !todo.completed));
-                break;
-            default:
-                setFilteredList(todoList);
-        }
     };
 
     return (
@@ -47,6 +34,7 @@ function App() {
             <header className="title">#todo</header>
             <SelectionBar />
             <TaskBoard filteredList={filteredList} status={status} />
+            <footer className="footer"></footer>
         </div>
     );
 }
