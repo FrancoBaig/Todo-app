@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import "./App.css";
 import SelectionBar from "./components/SelectionBar";
 import TaskBoard from "./components/TaskBoard";
@@ -9,7 +9,7 @@ function App() {
     const [status, setStatus] = useState("All");
     const [filteredList, setFilteredList] = useState(todoList);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (localStorage.getItem("todoList") === null) {
             localStorage.setItem("todoList", JSON.stringify([]));
         } else {
@@ -18,9 +18,10 @@ function App() {
         }
     }, []);
 
-    useEffect(() => {
-        filterList();
+    useLayoutEffect(() => {
         saveLocalTodoList();
+        filterList();
+        console.log("activo");
     }, [status, todoList]);
 
     const saveLocalTodoList = () => {
