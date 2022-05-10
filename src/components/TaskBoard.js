@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./Input";
 import TaskList from "./TaskList";
 import DeleteButton from "./DeleteButton";
-import InputProvider from "../hooks/input-hooks";
+import InputProvider from "../providers/input-hooks";
 
 function TaskBoard({ filteredList, status }) {
     return (

@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import TodoProvider from "./hooks/todo-hooks";
-import StatusProvider from "./hooks/status-hooks";
+import TodoProvider from "./providers/todo-hooks";
+import StatusProvider from "./providers/status-hooks";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

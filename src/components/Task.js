@@ -1,6 +1,6 @@
 import React from "react";
-import { useTodo } from "../hooks/todo-hooks";
-import { useStatus } from "../hooks/status-hooks";
+import { useTodo } from "../providers/todo-hooks";
+import { useStatus } from "../providers/status-hooks";
 
 function Task({ todo }) {
     const [todoList, setTodoList] = useTodo();

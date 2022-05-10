@@ -1,5 +1,5 @@
 import React from "react";
-import { useTodo } from "../hooks/todo-hooks";
+import { useTodo } from "../providers/todo-hooks";
 
 function DeleteButton() {
     const [todoList, setTodoList] = useTodo();

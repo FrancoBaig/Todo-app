@@ -2,8 +2,8 @@ import React, { useState, useLayoutEffect } from "react";
 import "./App.css";
 import SelectionBar from "./components/SelectionBar";
 import TaskBoard from "./components/TaskBoard";
-import { useTodo } from "./hooks/todo-hooks";
-import { useStatus } from "./hooks/status-hooks";
+import { useTodo } from "./providers/todo-hooks";
+import { useStatus } from "./providers/status-hooks";
 
 function App() {
     const [todoList, setTodoList] = useTodo();

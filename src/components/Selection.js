@@ -1,5 +1,5 @@
 import React from "react";
-import { useStatus } from "../hooks/status-hooks";
+import { useStatus } from "../providers/status-hooks";
 
 function Selection({ name }) {
     const [status, setStatus] = useStatus();
