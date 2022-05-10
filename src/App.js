@@ -34,7 +34,6 @@ function App() {
             <header className="title">#todo</header>
             <SelectionBar />
             <TaskBoard filteredList={filteredList} status={status} />
-            <footer className="footer"></footer>
         </div>
     );
 }
