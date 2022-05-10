@@ -1,6 +1,9 @@
 import React from "react";
+import { useStatus } from "../hooks/status-hooks";
 
-function Selection({ name, status, setStatus }) {
+function Selection({ name }) {
+    const [status, setStatus] = useStatus();
+
     const setStatusHandler = () => {
         setStatus(name);
     };

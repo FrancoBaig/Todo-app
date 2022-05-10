@@ -1,6 +1,9 @@
 import React from "react";
+import { useTodo } from "../hooks/todo-hooks";
 
-function DeleteButton({ todoList, setTodoList }) {
+function DeleteButton() {
+    const [todoList, setTodoList] = useTodo();
+
     const deleteCompletedHandler = () => {
         setTodoList(todoList.filter((todo) => !todo.completed));
     };

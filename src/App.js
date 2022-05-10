@@ -2,11 +2,12 @@ import React, { useState, useLayoutEffect } from "react";
 import "./App.css";
 import SelectionBar from "./components/SelectionBar";
 import TaskBoard from "./components/TaskBoard";
+import { useTodo } from "./hooks/todo-hooks";
+import { useStatus } from "./hooks/status-hooks";
 
 function App() {
-    const [input, setInput] = useState("");
-    const [todoList, setTodoList] = useState([]);
-    const [status, setStatus] = useState("All");
+    const [todoList, setTodoList] = useTodo();
+    const [status] = useStatus();
     const [filteredList, setFilteredList] = useState(todoList);
 
     useLayoutEffect(() => {
@@ -44,15 +45,8 @@ function App() {
     return (
         <div className="App">
             <header className="title">#todo</header>
-            <SelectionBar status={status} setStatus={setStatus} />
-            <TaskBoard
-                todoList={todoList}
-                setTodoList={setTodoList}
-                input={input}
-                setInput={setInput}
-                filteredList={filteredList}
-                status={status}
-            />
+            <SelectionBar />
+            <TaskBoard filteredList={filteredList} status={status} />
         </div>
     );
 }

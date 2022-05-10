@@ -1,6 +1,11 @@
 import React from "react";
+import { useInput } from "../hooks/input-hooks";
+import { useTodo } from "../hooks/todo-hooks";
 
-function Input({ input, setInput, todoList, setTodoList }) {
+function Input() {
+    const [input, setInput] = useInput();
+    const [todoList, setTodoList] = useTodo();
+
     const inputHandler = (e) => {
         setInput(e.target.value);
     };

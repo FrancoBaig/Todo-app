@@ -1,6 +1,11 @@
 import React from "react";
+import { useTodo } from "../hooks/todo-hooks";
+import { useStatus } from "../hooks/status-hooks";
 
-function Task({ todo, todoList, setTodoList, status }) {
+function Task({ todo }) {
+    const [todoList, setTodoList] = useTodo();
+    const [status] = useStatus();
+
     const deleteHandler = () => {
         setTodoList(todoList.filter((item) => item.id !== todo.id));
     };

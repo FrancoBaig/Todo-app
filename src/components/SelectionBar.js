@@ -3,17 +3,12 @@ import Selection from "./Selection";
 
 const selectionArray = ["All", "Active", "Completed"];
 
-function SelectionBar({ status, setStatus }) {
+function SelectionBar() {
     return (
         <>
             <div className="section-container">
                 {selectionArray.map((section) => (
-                    <Selection
-                        key={section}
-                        name={section}
-                        status={status}
-                        setStatus={setStatus}
-                    />
+                    <Selection key={section} name={section} />
                 ))}
             </div>
             <div className="container-separator"></div>
